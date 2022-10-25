@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_test_models,access.test.models,model_test_models,,1,1,1,1
+access_test_model_lines,access.test.model.lines,model_test_model_lines,,1,1,1,1
+access_test_wizards,access.test.wizards,model_test_wizards,,1,1,1,1

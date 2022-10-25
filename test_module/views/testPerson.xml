@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+ <!-- Treee-->
+    <record id="test_tree" model="ir.ui.view">
+        <field name="name">test.models.tree</field>
+        <field name="model">test.models</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="test_name"/>
+                <field name="test_age"/>
+                <field name="create_name"/>
+                <field name="responsible" attrs = "{'invisible':[('create_name','=',False)]}"/>
+                <field name="one"/>
+                <field name="two"/>
+                <field name="bool_all"/>
+                <field name="image"/>
+                <field name="clients"/>
+            </tree>
+        </field>
+    </record>
+
+ <!-- Form-->
+    <record id="test_form" model="ir.ui.view">
+        <field name="name">test.models.form</field>
+        <field name="model">test.models</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="%(test_module.create_test_wizard)d" string="Создать и добавить клиента" type="action" class="oe_highlight"/>
+                </header>
+               <sheet>
+                    <group>
+                        
+                        
+                        <group>
+                            <field name="test_name"/>
+                            <field name="test_age"/>
+                            <field name="create_name"/>
+                            <field name="responsible" attrs = "{'invisible':[('create_name','=',False)]}"/>
+                        </group>
+                        <group>
+                            <field name="one"/>
+                            <field name="two"/>
+                            <field name="bool_all"/>
+                        </group>
+                        <group attrs = "{'invisible':['|','&amp;',('create_name','!=',''),('one','=',True),'&amp;',('two','=',True),('responsible','!=','')]}">
+                            <field name="gender" attrs = "{'invisible':['|','&amp;',('create_name','!=',''),('one','=',True),'&amp;',('two','=',True),('responsible','!=','')]}"/>
+                            <field name="notes" attrs = "{'invisible':[('create_name','=',False)]}"/>
+                            <field name="image" attrs = "{'invisible':[('create_name','=',False)]}"/>
+                        
+                        </group>
+                        <field name="clients"/>
+                    </group>
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="test_action" model="ir.actions.act_window">
+        <field name="name">Tests</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">test.models</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="ret">Hello, world!</p>
+        </field>
+    </record>
+
+
+<!-- Menu-->
+    <menuitem id="test_root" 
+    name="Test" 
+    sequence="10"/>
+    
+    <menuitem id="test_test" 
+    name="Test2"
+    parent="test_root"
+    sequence="10"/>
+
+    <menuitem id="test_test_root" 
+    name="Test5"
+    parent="test_test" 
+    action="test_action"
+    sequence="10"/>
+    
+    
+    
+</odoo>
