@@ -28,7 +28,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="%(test_module.create_test_wizard)d" string="Создать и добавить клиента" type="action" class="oe_highlight"/>
+                    
+                    <button name="create_wizard" string="Создать и добавить клиента" type="object" class="oe_highlight"/>
                 </header>
                <sheet>
                     <group>

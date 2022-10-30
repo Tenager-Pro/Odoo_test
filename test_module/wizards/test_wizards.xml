@@ -6,14 +6,13 @@
      <field name="arch" type="xml">
         <form string="Create client">
             <group>
-                <field name="client_id"/>
+                <field name="partner_name"/>
   
             </group>
             <footer>
                 <button name="test_wizards" string="Cоздать и добавить" type="object" class="btn-primary"/>
                 <button name="test_wizards_change" string="Создать и изменить" type="object" class="btn-primary"/>
                 <button string="Отменить" class="btn-secondary" special="cancel"/>
-                <button name="%(test_module.test_line_action)d" string="Создать и добавить клиента" type="action" class="oe_highlight"/>
             </footer>
         </form>
     </field>

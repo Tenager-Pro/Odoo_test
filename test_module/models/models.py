@@ -45,6 +45,15 @@ class TestModels(models.Model):
         if ((self.one==False) or (self.two==False)):
             values['bool_all'] = False   
         self.update(values)
+    def create_wizard(self):
+        return{
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'test.wizards',
+            'target': 'new',
+            'type': 'ir.actions.act_window',
+            'context': {'test_models_id': self.id}
+        } 
     
  
 
