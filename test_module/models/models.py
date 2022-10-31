@@ -6,18 +6,28 @@ class TestModels(models.Model):
     _description = 'Test models'
 
     test_name = fields.Char(string = 'Name', required=True)
+
     test_age = fields.Integer(string='Age')
+
     gender = fields.Selection([
         ('male','Male'),
         ('female','Female'),
     ], required=True, default='male',string='Gender')
+
     notes = fields.Text(string='Notes')
+
     one=fields.Boolean(string='One')
+
     two=fields.Boolean(string='Two')
+
     bool_all=fields.Boolean(string='All')
+
     create_name = fields.Many2one(comodel_name='res.users', default=lambda self: self.env.uid, required=True) 
+
     image = fields.Binary(string='Image')
+
     responsible=fields.Many2one(comodel_name='res.users', default=lambda self: self.env.uid)
+    
     clients=fields.One2many(comodel_name='test.model.lines', inverse_name='test')
     
     @api.onchange('bool_all')

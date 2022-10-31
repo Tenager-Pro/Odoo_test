@@ -41,9 +41,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">test.model.lines</field>
         <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="ret">Hello, world2!</p>
-        </field>
+        <field name="help" type="html"></field>
     </record>
     
 </odoo>

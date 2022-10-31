@@ -10,9 +10,20 @@
   
             </group>
             <footer>
-                <button name="test_wizards" string="Cоздать и добавить" type="object" class="btn-primary"/>
-                <button name="test_wizards_change" string="Создать и изменить" type="object" class="btn-primary"/>
-                <button string="Отменить" class="btn-secondary" special="cancel"/>
+                <button 
+                    name="test_wizards" 
+                    string="Cоздать и добавить" 
+                    type="object" 
+                    class="btn-primary"/>
+                <button 
+                    name="test_wizards_change" 
+                    string="Создать и изменить" 
+                    type="object" 
+                    class="btn-primary"/>
+                <button 
+                    string="Отменить" 
+                    class="btn-secondary" 
+                    special="cancel"/>
             </footer>
         </form>
     </field>
